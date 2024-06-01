@@ -1,0 +1,28 @@
+   {% load static %}
+   <!-- Header start here -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+            <a href="{% url 'home' %}" class="logo me-auto"><img src="{% static 'images/logo.jpg' %}" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link  active " href="{% url 'home' %}">Home</a></li>
+                    <li><a class="nav-link" href="#products">Product</a></li>
+                    <li><a class="nav-link " href="#package">Package</a></li>
+                    <!-- <li><a class="nav-link   " href="#portfolio">Portfolio</a></li> -->
+                    <li><a class="nav-link " href="newsroom.html">News Room</a></li>
+
+                    <li><a class="nav-link " href="{% url 'about' %}">About Us</a></li>
+                    <li><a class="nav-link " href="#contact">Contact Us</a></li>
+                    <li><a class="getstarted" href="login.html">Get Started</a></li>
+                    <li><a href=""><i class="fa-solid fa-cart-shopping  cart"> Cart</i></a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- Header end here -->
