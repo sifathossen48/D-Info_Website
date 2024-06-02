@@ -51,3 +51,20 @@ class Products(models.Model):
     def __str__(self):
         return self.name
 
+class Package(models.Model):
+    name = models.CharField(max_length=30)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    def __str__(self):
+        return self.name
+  
+class Feature(models.Model):
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    title = models.CharField(max_length=30)
+    def __str__(self):
+        return self.title
+class CardFeature(models.Model):
+    title = models.CharField(max_length=50)
+    is_up = models.BooleanField(default=True)
+    is_down = models.BooleanField(default=False)
+    def __str__(self):
+        return self.title

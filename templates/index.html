@@ -168,172 +168,30 @@
         <div class="container ">
             <h1 class="text-center text-uppercase fw-bold p-3">package</h1>
             <div class="row">
+                {% for package in packages %}
                 <div class="col-4">
                     <div class="card">
 
                         <div class="card-body">
-                            <h4 class="card-title text-center fw-bold pb-1">Basic Package</h4>
-                            <h6 class="fw-bold">1200BDT (One-Time Payment)</h6>
+                            <h4 class="card-title text-center fw-bold pb-1">{{package.name}}</h4>
+                            <h6 class="fw-bold">{{package.price}}(One-Time Payment)</h6>
+                            {% for feature in features %}
                             <p>
                                 <li class="list-unstyled list-inline-item">
 
                                     <i class="fa-solid fa-check fa-2x icon-style"></i>
                                 </li>
                                 <li class="list-unstyled list-inline-item">
-                                    <h6>Full Custom Design NFC Card</h6>
+                                    <h6>{{feature.title}}</h6>
                                 </li>
                             </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Full Custom Field</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>QR Code with Customization</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-                                    <i class="fa-solid fa-circle-xmark fa-2x icon-style"></i>
-
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Testimonial</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-circle-xmark fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Portfolio</h6>
-                                </li>
-                            </p>
+                            {% endfor %}
+                    
                             <a href="all-package.html" class="btn explore-features">Explore All Features</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <h4 class="card-title text-center fw-bold pb-1">Standard Package</h4>
-                            <h6 class="fw-bold">1800BDT (One-Time Payment)</h6>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Included Basic package </h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Show change language option </h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Show Share Button</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-                                    <i class="fa-solid fa-circle-xmark fa-2x icon-style"></i>
-
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Hide Brandingl</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-circle-xmark fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Enquery Form</h6>
-                                </li>
-                            </p>
-                            <a href="all-package.html" class="btn explore-features">Explore All Features</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-
-                        <div class="card-body">
-                            <h4 class="card-title text-center fw-bold pb-1">Premium Package</h4>
-                            <h6 class="fw-bold">2500BDT (One-Time Payment)</h6>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Included All Pacakge</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6> Unlimited Contact</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Profile Customization</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Reorder Section</h6>
-                                </li>
-                            </p>
-                            <p>
-                                <li class="list-unstyled list-inline-item">
-
-                                    <i class="fa-solid fa-check fa-2x icon-style"></i>
-                                </li>
-                                <li class="list-unstyled list-inline-item">
-                                    <h6>Multiple Profile theme support
-                                    </h6>
-                                </li>
-                            </p>
-                            <a href="all-package.html" class="btn explore-features">Explore All Features</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
 
             </div>
         </div>
@@ -357,7 +215,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="fs-lg-2 fs-md-2 fs-xm-2 fs-xs-2 mr-2 mt-2 mb-2">
-                        <img style="width:100%" src="images/featurea.jpg" alt=" Business card image">
+                        <img style="width:100%" src="{% static 'images/featurea.jpg' %}" alt=" Business card image">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -367,51 +225,23 @@
                             By Using D<sub>info</sub> NFC Smart Business Card, you can share all your valuable
                             information instantly like a magic!
                         </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Durable Metal material</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Durable plastic material</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Elegant design</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Virtual Profile</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Content Dashboard</h6>
-                            </li>
-                        </p>
+
+
+                       
+                       {% for u in up %}
+                       <p>
+                        <li class="list-unstyled list-inline-item">
+                            <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
+                            <i class="fa-solid fa-check fa-2x icon-style"></i>
+                        </li>
+                        <li class="list-unstyled list-inline-item">
+                            <h6>{{u.title}}</h6>
+                        </li>
+                    </p>
+                       {% endfor %}
+                         
+                      
+                   
                         <p><a href="#" class="btn order-now">Order Now</a>
                         </p>
 
@@ -435,93 +265,29 @@
                 <div class="col-md-6 col-lg-6 col-sm-12 col-sx-12">
                     <div class="fs-lg-10 fs-md-10 fs-xm-10 fs-xs-10">
                         <h3 class="font-weight-bold">Features of D<sub>info</sub> Card</h3>
+                        {% for d in down %}
                         <p>
                             <li class="list-unstyled list-inline-item">
                                 <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
                                 <i class="fa-solid fa-check fa-2x icon-style"></i>
                             </li>
                             <li class="list-unstyled list-inline-item">
-                                <h6>Full Custom Design NFC Card</h6>
+                                <h6>{{d.title}}</h6>
                             </li>
                         </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Unlimited Contact/Custom Fields</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Galary Image Section</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>QR Code Printed & Downloadable</h6>
-                            </li>
-                        </p> <p>
-                        <li class="list-unstyled list-inline-item">
-                            <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                            <i class="fa-solid fa-check fa-2x icon-style"></i>
-                        </li>
-                        <li class="list-unstyled list-inline-item">
-                            <h6>Customizable Card URL</h6>
-                        </li>
-                        </p>
-                    <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Multiple Profile theme support</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Product & Service Show-Casing</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Display Portfolio</h6>
-                            </li>
-                        </p>
-                        <p>
-                            <li class="list-unstyled list-inline-item">
-                                <!-- <img style="width:30px" src="images/tick-mark.jpg" alt="Tick Mark"> -->
-                                <i class="fa-solid fa-check fa-2x icon-style"></i>
-                            </li>
-                            <li class="list-unstyled list-inline-item">
-                                <h6>Show Your Customer Testimonials</h6>
-                            </li>
-                        </p>
+                       {% endfor %}
+                       
+                  
+                  
+                    
+                  
 
                         <p><a href="#" class="btn order-now">BUY CARD NOW</a>
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-sx-12">
-                    <img style="width:100%" src="images/card-feature.jpg" alt="Card Features Image">
+                    <img style="width:100%" src="{% static 'images/card-feature.jpg' %}" alt="Card Features Image">
                 </div>
             </div>
 
