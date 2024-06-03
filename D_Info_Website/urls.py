@@ -8,6 +8,7 @@ urlpatterns = [
     path('',include('Home_Page.urls')),
     path('about/',include('About_Page.urls')),
     path('termsCondition/', include('TermsCondition.urls')),
-    path('returnPolicy/', include('ReturnPolicy.urls'))
+    path('returnPolicy/', include('ReturnPolicy.urls')),
+    path('newsroom/', include('News_Page.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

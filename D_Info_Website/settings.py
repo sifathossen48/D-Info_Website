@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'About_Page',
     'TermsCondition',
     'ReturnPolicy',
+    'News_Page',
     'ckeditor',
 ]
 
