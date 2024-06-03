@@ -68,3 +68,17 @@ class CardFeature(models.Model):
     is_down = models.BooleanField(default=False)
     def __str__(self):
         return self.title
+class Partner(models.Model):
+    companyName = models.CharField(max_length=30)
+    companyLogo = models.ImageField(upload_to='partner/')
+    def __str__(self):
+        return self.companyName
+class Review(models.Model):
+    client = models.CharField(max_length=40)
+    title = models.CharField(max_length=40)
+    image = models.ImageField(upload_to='client')
+    profile_link = models.CharField(max_length=80)
+    message = models.TextField()
+    def __str__(self):
+        return self.client
+    

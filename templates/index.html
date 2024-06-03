@@ -303,7 +303,7 @@
         <h1 class=" fw-bold text-center text-uppercase">As Trusted By</h1>
         <hr class="hr-style">
         <p class="text-center">TO NAME A FEW OF OUR CLIENTS AND PARTNERS</p>
-        <img class="img-fluid text-center clients m-4" src="images/clients.PNG" alt="">
+        <img class="img-fluid text-center clients m-4" src="{% static 'images/clients.PNG' %}" alt="">
         <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -399,49 +399,21 @@
                         aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <p class="text-center">This is really appreciated for this unique innavation in our country.I
-                            personally recommend to eveyone to try the D-INFO Card.It's very helpful and saves time and
-                            very easy to use. Thank you D-INFO team, for such a great service.</p>
-                        <img class="rounded-circle reviews-img" src="images/monir.jpg" alt=""> <br>
+                    {% for r in reviews %}
+                    <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                        <p class="text-center">{{r.message}}</p>
+                        <img class="rounded-circle reviews-img" src="{{r.image.url}}" alt=""> <br>
                         <i class=" fas fa-star  icon-style"></i>
                         <i class="fas fa-star icon-style"></i>
                         <i class="fas fa-star icon-style"></i>
                         <i class="fas fa-star icon-style"></i>
                         <i class="fas fa-star icon-style"></i>
                         </span>
-                        <h6 class="fw-bold">Mohammad Moniruzzaman</h6>
-                        <p>Managing Director & CEO, OS IT SOLUTIONS LIMITED. </p>
+                        <h6 class="fw-bold">{{r.client}}</h6>
+                        <p>{{r.title}} </p>
                         <button class=" btn  d-infoprofile">D-INFO PROFILE</button>
                     </div>
-                    <div class="carousel-item ">
-                        <p class="text-center">The D-INFO NFC Business Cards have amaxing customizable designs! I am
-                            able to present my brand in a professional and eye-catching way. I'm extremly plased with th
-                            outcome.</p>
-                        <img class="rounded-circle reviews-img" src="images/Md. Ferdowsur Rahman.jpg" alt=""> <br>
-                        <i class=" fas fa-star  icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <h6 class="fw-bold">MD.Ferdowsur Rahman</h6>
-                        <p>Software Enginner </p>
-                        <button class=" btn  d-infoprofile">D-INFO PROFILE</button>
-                    </div>
-                    <div class="carousel-item ">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, perspiciatis temporibus
-                            numquam animi suscipit vitae fugit accusantium voluptatum ea asperiores, cumque molestias
-                            laboriosam omnis accusamus non! Eveniet ut dolorum dignissimos.</p>
-                        <img class="rounded-circle reviews-img" src="images/Md. Ferdowsur Rahman.jpg" alt=""> <br>
-                        <i class=" fas fa-star  icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <i class="fas fa-star icon-style"></i>
-                        <h6 class="fw-bold">MD.Ferdowsur Rahman</h6>
-                        <p>Software Enginner </p>
-                        <button class=" btn  d-infoprofile">D-INFO PROFILE</button>
-                    </div>
+                     {% endfor %}
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">

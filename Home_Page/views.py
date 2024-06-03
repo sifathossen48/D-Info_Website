@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from Home_Page.models import CardFeature, Feature, FrequentlyQuestion, HeroSection, HowToCardWork, OrderStep, Package, Products
+from Home_Page.models import CardFeature, Feature, FrequentlyQuestion, HeroSection, HowToCardWork, OrderStep, Package, Products, Review
 # Create your views here.
 class HomeView(TemplateView):
     template_name = 'index.html'
@@ -17,6 +17,7 @@ class HomeView(TemplateView):
         context['features'] = Feature.objects.all()
         context['up'] = CardFeature.objects.filter(is_up=True)
         context['down'] = CardFeature.objects.filter(is_down=True)
+        context['reviews'] = Review.objects.all()
      
         return context
 
