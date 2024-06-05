@@ -8,5 +8,5 @@ class PolicyView(TemplateView):
     template_name = 'returnPolicy.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['policy'] = Return_Policy.objects.all()
+        context['policy'] = Return_Policy.objects.first()
         return context
