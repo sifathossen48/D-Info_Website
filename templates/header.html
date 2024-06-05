@@ -9,12 +9,23 @@
                     <li><a class="nav-link" href="#products">Product</a></li>
                     <li><a class="nav-link " href="#package">Package</a></li>
                     <!-- <li><a class="nav-link   " href="#portfolio">Portfolio</a></li> -->
-                    <li><a class="nav-link " href="newsroom.html">News Room</a></li>
+                    <li><a class="nav-link " href="{% url 'news' %}">News Room</a></li>
 
                     <li><a class="nav-link " href="{% url 'about' %}">About Us</a></li>
-                    <li><a class="nav-link " href="#contact">Contact Us</a></li>
-                    <li><a class="getstarted" href="login.html">Get Started</a></li>
+                    <li><a class="nav-link " href="{% url 'contact' %}">Contact Us</a></li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                    <a class="nav-link">Hi {{request.user.username}}</a>
+                  </li>
+                     <li>
+                    <a class="nav-link" href="{% url 'logout' %}" class="nav-link">Logout</a>
+                  </li>
+                  {% else %}
+                    <li><a class="getstarted" href="{% url 'login' %}">Get Started</a></li>
+                  {% endif %}
+                  {% if request.user.is_authenticated %}
                     <li><a href=""><i class="fa-solid fa-cart-shopping  cart"> Cart</i></a></li>
+                  {% endif %}
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

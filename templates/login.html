@@ -21,7 +21,11 @@
                       <!-- Login form -->
                       <div class="pt-3 pt-lg-4">
                         <div class="">
-                          <form class="form-default" role="form" action="{% url 'login' %}" method="post">
+                          <form class="form-default" action="{% url 'login' %}" method="post">
+                            {% csrf_token %}
+                              {% for message in messages %}
+                              <p>{{message}}</p>
+                              {% endfor %}
                             <input type="hidden" name="_token" value="">
                             <!-- Email or Phone -->
                             <div class="form-group">
@@ -69,7 +73,7 @@
                         <!-- Register Now -->
                         <div class="text-center">
                           <p class="fs-12 text-gray mb-0">Dont have an account?</p>
-                          <a href="registration.html"
+                          <a href="{% url 'register' %}"
                             class="fs-14 fw-700 animate-underline-primary">Register Now</a>
                         </div>
                       </div>

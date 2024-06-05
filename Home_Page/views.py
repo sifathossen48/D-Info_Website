@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-
+from django.contrib import messages
+from Home_Page import forms
 from Home_Page.models import CardFeature, Feature, FrequentlyQuestion, HeroSection, HowToCardWork, OrderStep, Package, Products, Review
 # Create your views here.
 class HomeView(TemplateView):
@@ -21,5 +22,22 @@ class HomeView(TemplateView):
      
         return context
 
-class ContactView(TemplateView):
-    template_name = 'contact.html'
+def contact(request):
+    if request.method == 'POST':
+        form = forms.ContactForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Data submitted successfully') # Redirect to a success page
+        else:
+            # Print form errors to console for debugging
+            print(form.errors)
+            messages.error(request, 'Invalid! Please try again.')
+    else:
+        form = forms.ContactForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'contact.html', context)
+
+class AllPackView(TemplateView):
+    template_name = 'all-package.html'

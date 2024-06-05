@@ -1,3 +1,4 @@
+       {% load static %}
        <!-- importanr linka and footer section start here -->
        <section class="py-lg-3 text-light footer-widget" style="background: #37517e;
        color:#fff;">
@@ -12,12 +13,12 @@
                            </h6>
                            <ul class="list-unstyled">
                                <li class="mb-2">
-                                   <a href="#" class=" link ">
+                                   <a href="{% url 'policy' %}" class=" link ">
                                        Return Policy
                                    </a>
                                </li>
                                <li class="mb-2">
-                                   <a href="termsCondition.html" class="link">
+                                   <a href="{% url 'terms' %}" class="link">
                                        Term Conditions
                                    </a>
                                </li>
@@ -54,11 +55,12 @@
                    <!-- My Account -->
                    <div class="col-md-4 col-sm-6">
                        <div class=" text-sm-left mt-4">
+                        {% if request.user.is_authenticated %}
                            <h6 class="fs-14 text-white text-uppercase fw-700 mb-3">My Account</h6>
                            <ul class="list-unstyled">
                                <li class="mb-2">
-                                   <a class="link" href="#">
-                                       Login
+                                   <a class="link" href="{% url 'logout' %}">
+                                       Logout
                                    </a>
                                </li>
                                <li class="mb-2">
@@ -73,6 +75,23 @@
                                    </a>
                                </li>
                            </ul>
+                        {% else %}
+                        <h6 class="fs-14 text-white text-uppercase fw-700 mb-3">Login Your Account</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a class="link" href="{% url 'login' %}">
+                                    Login
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="link" href="{% url 'register' %}">
+                                    Register
+                                </a>
+                            </li>
+
+                    
+                        </ul>
+                        {% endif %}
                            <!-- Social -->
                            <h6 class="fs-14 fw-700 text-white text-uppercase mt-3 mt-lg-0">Follow Us</h6>
                            <ul class="list-inline social colored mb-4">
@@ -122,7 +141,7 @@
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item mr-3">
 
-                                <img src="images/payment.png" height="50" class="mw-100 h-auto"
+                                <img src="{% static 'images/payment.png' %}" height="50" class="mw-100 h-auto"
                                     style="max-height: 50px">
 
                             </li>

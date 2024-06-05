@@ -36,7 +36,7 @@ class RegisterView(View):
             user.set_password(password)
             user.save()
             messages.success(request, 'Registration successfully done')
-            return redirect('/login/')
+            return render(request, 'login.html')
 
         else:
             messages.error(request, 'Invalid data')
@@ -65,3 +65,8 @@ class LoginView(View):
             messages.error(request, 'Invalid data')
         context = {'form': form}
         return render(request, 'login.html', context=context)
+    
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('/auth/login/')

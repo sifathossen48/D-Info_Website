@@ -45,7 +45,11 @@
                 </div>
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form action="{% url 'contact' %}" method="post" role="form" class="php-email-form">
+                        {% csrf_token %}
+                        {% for message in messages %}
+                        {{message}}
+                        {% endfor %}
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">Your Name</label>
@@ -67,9 +71,12 @@
                         <div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
-
                         </div>
+                        {% if request.user.is_authenticated %}
                         <div class="text-center"><button type="submit">Send Message</button></div>
+                        {% else %}
+                        <div class="text-center"><a href="{% url 'login' %}">Login For Send Message</a></div>
+                        {% endif %}
                     </form>
                 </div>
 

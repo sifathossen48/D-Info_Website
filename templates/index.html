@@ -13,7 +13,7 @@
                     <h1>{{hero.title}}</h1>
                     <h2>{{hero.desc}}</h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="login.html" class="btn-get-started scrollto">Get Started</a>
+                        <a href="{% url 'login' %}" class="btn-get-started scrollto">Get Started</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -113,7 +113,11 @@
                         <div class="card-body">
                             <h5 class="card-titl  text-uppercase text-center fw-bold">{{w.name}}</h5>
                             <p class="card-text cards text-uppercase fw-bold text-center">From ৳ {{w.price}} </p>
-                            <a href="#" class="btn buy-now text-uppercase">Buy now</a>
+                            {% if request.user.is_authenticated %}
+                            <a href="{% url 'contact' %}" class="btn buy-now text-uppercase">Buy now</a>
+                            {% else %}
+                            <a href="{% url 'login' %}" class="btn buy-now text-uppercase">Buy now</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -148,12 +152,16 @@
                                        <img src="{{b.image_3.url}}" class="d-block w-100" alt="...">
                                    </div>
                                    {% endif %}
-                               </div>0
+                               </div>
                            </div>
                            <div class="card-body">
                                <h5 class="card-titl  text-uppercase text-center fw-bold">{{b.name}}</h5>
                                <p class="card-text cards text-uppercase fw-bold text-center">From ৳ {{b.price}} </p>
-                               <a href="#" class="btn buy-now text-uppercase">Buy now</a>
+                               {% if request.user.is_authenticated %}
+                               <a href="{% url 'contact' %}" class="btn buy-now text-uppercase">Buy now</a>
+                               {% else %}
+                               <a href="{% url 'login' %}" class="btn buy-now text-uppercase">Buy now</a>
+                               {% endif %}
                            </div>
                        </div>
                    </div>
@@ -187,7 +195,7 @@
                             </p>
                             {% endfor %}
                     
-                            <a href="all-package.html" class="btn explore-features">Explore All Features</a>
+                            <a href="{% url 'allpack' %}" class="btn explore-features">Explore All Features</a>
                         </div>
                     </div>
                 </div>
@@ -240,12 +248,12 @@
                     </p>
                        {% endfor %}
                          
-                      
-                   
-                        <p><a href="#" class="btn order-now">Order Now</a>
-                        </p>
-
-
+                       {% if request.user.is_authenticated %}
+                       <a href="{% url 'contact' %}" class="btn order-now">Order Now</a>
+                       {% else %}
+                       <a href="{% url 'login' %}" class="btn order-now">Order Now</a>
+                       {% endif %}
+             
                     </div>
                 </div>
             </div>
@@ -276,13 +284,13 @@
                             </li>
                         </p>
                        {% endfor %}
-                       
+                       {% if request.user.is_authenticated %}
+                       <p><a href="{% url 'contact' %}" class="btn order-now">BUY CARD NOW</a>
+                       {% else %}
+                       <p><a href="{% url 'login' %}" class="btn order-now">BUY CARD NOW</a>
+                       {% endif %}
                   
-                  
-                    
-                  
-
-                        <p><a href="#" class="btn order-now">BUY CARD NOW</a>
+                        
                         </p>
                     </div>
                 </div>
@@ -339,7 +347,7 @@
                 <div class="col-md-6 col-lg-6 col-sm-12 col-sx-12">
                     <div class="hero-unit align-middle">
                         <p class="align-middle pt-2 text-center">
-                            <a class="btn order-now btn-large" href="#">
+                            <a class="btn order-now btn-large" href="{% url 'contact' %}">
                                 Contact Us Now
                             </a>
                         </p>
@@ -433,79 +441,7 @@
 
     <!-- Review section end here -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact p-5">
-        <div class="container" data-aos="fade-up">
 
-            <div class="section-title">
-                <h1 class=" fw-bold text-center text-uppercase">Contact Us</h1>
-                <hr class="hr-style">
-                <p class="text-center text-uppercase">please fill out the form below</p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-5 d-flex align-items-stretch">
-                    <div class="info">
-                        <div class="address">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <h4>Location:</h4>
-                            <p>Tools & Technology Institute, BITAC 1208</p>
-                        </div>
-
-                        <div class="email">
-                            <i class="fa-regular fa-envelope"></i>
-                            <h4>Email:</h4>
-                            <p> support@d-info.com</p>
-                        </div>
-
-                        <div class="phone">
-                            <i class="fa-solid fa-phone"></i>
-                            <h4>Call:</h4>
-                            <p>01911-310766</p>
-                        </div>
-
-
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.6214652848007!2d90.40167977410073!3d23.760874388376532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9473c0d94e5%3A0xc2e967b0d622f2b4!2sOS%20IT%20Solutions%20Ltd!5e0!3m2!1sen!2sbd!4v1711304539388!5m2!1sen!2sb"
-                            frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="name">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Subject</label>
-                            <input type="text" class="form-control" name="subject" id="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Message</label>
-                            <textarea class="form-control" name="message" rows="10" required></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Contact Section -->
 
  
 

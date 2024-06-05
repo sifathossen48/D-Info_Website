@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from Home_Page.models import CardFeature, Feature, FrequentlyQuestion, HeroSection, HowToCardWork, OrderStep, Package, Partner, Products, Review
+from Home_Page.models import CardFeature, Contact, Feature, FrequentlyQuestion, HeroSection, HowToCardWork, OrderStep, Package, Partner, Products, Review
 
 # Register your models here.
 class HeroSectionAdmin(admin.ModelAdmin):
@@ -15,3 +15,4 @@ admin.site.register(Feature)
 admin.site.register(CardFeature)
 admin.site.register(Partner)
 admin.site.register(Review)
+admin.site.register(Contact)
