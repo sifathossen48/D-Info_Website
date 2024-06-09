@@ -11,5 +11,5 @@ urlpatterns = [
     path('termsCondition/', include('TermsCondition.urls')),
     path('returnPolicy/', include('ReturnPolicy.urls')),
     path('newsroom/', include('News_Page.urls')),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
