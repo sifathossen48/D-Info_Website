@@ -2,9 +2,12 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from django.core.exceptions import ObjectDoesNotExist
+from django.urls import reverse_lazy
 from django.views import View
 from django.contrib import messages
 from auth_app import forms
+from . forms import CustomPasswordResetForm
+from django.contrib.auth.views import PasswordResetView
 
 
 # class RegisterView(View):
@@ -76,3 +79,8 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect('/auth/login/')
+
+class CustomPasswordResetView(PasswordResetView):
+    form_class = CustomPasswordResetForm
+    success_url = reverse_lazy('password_reset_done')
+    template_name = 'password-forgot.html'
