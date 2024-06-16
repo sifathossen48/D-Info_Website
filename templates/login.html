@@ -22,7 +22,7 @@
                       <!-- Login form -->
                       <div class="pt-3 pt-lg-4">
                         <div class="">
-                          <form class="form-default" action="{% url 'login' %}" method="post">
+                          <form  id="login-form" class="form-default" action="{% url 'login' %}" method="post">
                             {% csrf_token %}
                               {% for message in messages %}
                               <p>{{message}}</p>
@@ -54,7 +54,7 @@
                               </div>
                               <!-- Forgot password -->
                               <div class="col-6 text-right">
-                                <a href="#"
+                                <a href="{% url 'password-reset' %}"
                                   class="text-reset fs-12 fw-400 text-gray-dark hov-text-primary"><u>Forgot
                                     password?</u></a>
                               </div>

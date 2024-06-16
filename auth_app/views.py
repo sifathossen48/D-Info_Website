@@ -24,6 +24,12 @@ from auth_app import forms
 #             messages.error(request, 'Invalid data')
 #         context = {form: 'form'}
 #         return render(request, 'registration.html', context=context)
+class PasswordReset(View):
+    def get(self,request):
+        return render(request, 'password-forgot.html')
+    def post(self,request):
+        return render(request, 'password-forgot.html')
+    
 class RegisterView(View):
     def get(self, request):
         return render(request, 'registration.html')
